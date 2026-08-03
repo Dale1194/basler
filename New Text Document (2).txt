@@ -1,0 +1,23 @@
+Vision Pro
+
+├── Live Camera
+├── Camera Setting
+├── Exposure
+├── Gain
+├── Trigger
+├── ROI
+├── Template
+├── Blob
+├── Edge
+├── Circle
+├── Coordinate
+├── Calibration
+├── PLC
+├── Recipe
+├── Log
+└── Result
+
+Trong đó:
+
+C#: giao diện, camera Basler, PLC, quản lý Recipe, hiển thị kết quả.
+Python (nhúng bên trong): OpenCV, Template Matching, Blob, Edge Detection, OCR, AI và các thuật toán xử lý ảnh.
