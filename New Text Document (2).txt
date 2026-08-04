@@ -1,4 +1,1 @@
-+    "templates": { "turtle": "./references/turtle.png" },
-+    "object_score_threshold": 0.85,
-+    "expected_position": [1850, 950],
-+    "position_tolerance": 50
+20260804_154104_848	FAIL	0.9976	48.9106	count=6 best=(1304,849,turtle,0.998) matches=[(1304,849,turtle,1.00) (1324,849,turtle,0.94) (1284,849,turtle,0.94) (1302,829,turtle,0.87) (1264,850,turtle,0.86) (1344,849,turtle,0.86)]; mean=48.91 range=[60,200]
