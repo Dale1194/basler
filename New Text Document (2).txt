@@ -1,19 +1,18 @@
 D:\Dale_Luong\basler_inspect>py main.py --once
+Đã kết nối: acA5472-5gm (serial=23883771)
+Đã áp cấu hình: Width=5472, Height=3648, OffsetX=0, OffsetY=0, ExposureTimeAbs=10036, GainRaw=1319, AcquisitionFrameRateAbs=28.99997
+[warn] Buffer underrun, retry sau 100ms (The buffer was incompletely grabbed. This can be caused by p)
 Traceback (most recent call last):
   File "D:\Dale_Luong\basler_inspect\main.py", line 171, in <module>
     sys.exit(main())
              ^^^^^^
-  File "D:\Dale_Luong\basler_inspect\main.py", line 152, in main
-    with BaslerCamera(serial_number=serial) as cam:
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Dale_Luong\basler_inspect\camera.py", line 32, in __enter__
-    self.connect()
-  File "D:\Dale_Luong\basler_inspect\camera.py", line 65, in connect
-    self._camera.Open()
-  File "C:\Users\TEST\AppData\Local\Programs\Python\Python312\Lib\site-packages\pypylon\pylon.py", line 4536, in Open
-    return _pylon.InstantCamera_Open(self)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-_genicam.RuntimeException: Failed to open 'Basler acA5472-5gm#0030533B42FB#192.168.3.3:3956'. The device is controlled by another application. Err: An attempt was made to access an address location which is currently/momentary not accessible. (0xE1018006)
- : RuntimeException thrown (file 'GigEDevice.cpp', line 312)
+  File "D:\Dale_Luong\basler_inspect\main.py", line 157, in main
+    run_once(cam, inspector, output_dir, csv_log, save, annotate_flag, prefix)
+  File "D:\Dale_Luong\basler_inspect\main.py", line 102, in run_once
+    image = cam.grab_one()
+            ^^^^^^^^^^^^^^
+  File "D:\Dale_Luong\basler_inspect\camera.py", line 142, in grab_one
+    raise RuntimeError(f"Grab thất bại: {err}")
+RuntimeError: Grab thất bại: The buffer was incompletely grabbed. This can be caused by performance problems of the network hardware used, i.e., the network adapter, switch, or Ethernet cable. Buffer underruns can also cause image loss. To fix this, use the pylonGigEConfigurator tool to optimize your setup and use more buffers for grabbing in your application to prevent buffer underruns. Check the FrameRetention setting.
 
 D:\Dale_Luong\basler_inspect>
