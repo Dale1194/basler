@@ -1,12 +1,48 @@
-D:\Dale_Luong\basler_inspect>py main.py --capture-reference
-Traceback (most recent call last):
-  File "D:\Dale_Luong\basler_inspect\main.py", line 28, in <module>
-    from inspector import InspectionReport, build_inspector
-  File "D:\Dale_Luong\basler_inspect\inspector.py", line 20, in <module>
-    from multi_template import MultiTemplateInspector  # noqa: F401  (re-exported)
-    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Dale_Luong\basler_inspect\multi_template.py", line 15, in <module>
-    from inspector import BaseInspector, InspectionReport, InspectionResult, _to_gray
-ImportError: cannot import name 'BaseInspector' from partially initialized module 'inspector' (most likely due to a circular import) (D:\Dale_Luong\basler_inspect\inspector.py)
+"""Crop một vật thể từ ảnh reference. Hiển thị ảnh co lại vừa màn hình,
+chọn ROI bằng chuột, lưu crop ở kích thước gốc."""
+import cv2
+import sys
+from pathlib import Path
 
-D:\Dale_Luong\basler_inspect>
+# ==== SỬA 2 DÒNG NÀY ====
+IMAGE_PATH = "references/reference_20260804_150000_000.png"   # path ảnh reference
+OUTPUT_PATH = "references/turtle.png"                          # nơi lưu crop
+# ==========================
+
+orig = cv2.imread(IMAGE_PATH)
+if orig is None:
+    raise FileNotFoundError(f"Không đọc được {IMAGE_PATH}")
+
+h, w = orig.shape[:2]
+MAX_DIM = 1280  # co ảnh hiển thị xuống còn cạnh dài nhất = 1280 px
+scale = min(MAX_DIM / max(h, w), 1.0)
+
+if scale < 1.0:
+    new_w, new_h = int(w * scale), int(h * scale)
+    display = cv2.resize(orig, (new_w, new_h))
+else:
+    display = orig
+
+print(f"Ảnh gốc: {w}x{h}, hiển thị: {display.shape[1]}x{display.shape[0]} (scale={scale:.3f})")
+print("Kéo chuột chọn ROI quanh con rùa → Enter để xác nhận, 'c' để hủy.")
+
+roi = cv2.selectROI("Chon rua", display, showCrosshair=True, fromCenter=False)
+cv2.destroyAllWindows()
+
+x, y, rw, rh = roi
+if rw == 0 or rh == 0:
+    print("Đã hủy.")
+    sys.exit(0)
+
+# Scale tọa độ ngược về ảnh gốc
+x_orig = int(x / scale)
+y_orig = int(y / scale)
+w_orig = int(rw / scale)
+h_orig = int(rh / scale)
+
+crop = orig[y_orig:y_orig + h_orig, x_orig:x_orig + w_orig]
+Path(OUTPUT_PATH).parent.mkdir(parents=True, exist_ok=True)
+cv2.imwrite(OUTPUT_PATH, crop)
+
+print(f"Đã lưu {OUTPUT_PATH}")
+print(f"  Vị trí trong ảnh gốc: x={x_orig}, y={y_orig}, size={w_orig}x{h_orig}")
