@@ -1,23 +1,30 @@
-Vision Pro
-
-├── Live Camera
-├── Camera Setting
-├── Exposure
-├── Gain
-├── Trigger
-├── ROI
-├── Template
-├── Blob
-├── Edge
-├── Circle
-├── Coordinate
-├── Calibration
-├── PLC
-├── Recipe
-├── Log
-└── Result
-
-Trong đó:
-
-C#: giao diện, camera Basler, PLC, quản lý Recipe, hiển thị kết quả.
-Python (nhúng bên trong): OpenCV, Template Matching, Blob, Edge Detection, OCR, AI và các thuật toán xử lý ảnh.
+2026-08-04 11:06:10.661 +07:00 [INF] VisionSuite starting up (BaseDirectory=C:\VisionSuite\)
+2026-08-04 11:06:10.704 +07:00 [INF] Building Generic Host...
+2026-08-04 11:06:10.760 +07:00 [INF] Host built successfully
+2026-08-04 11:06:11.248 +07:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;
+2026-08-04 11:06:11.347 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Users" AS "u")
+2026-08-04 11:06:11.374 +07:00 [INF] Creating WPF App...
+2026-08-04 11:06:11.438 +07:00 [INF] App created, InitializeComponent done
+2026-08-04 11:06:11.844 +07:00 [INF] VisionSuite shell window shown
+2026-08-04 11:06:11.844 +07:00 [INF] Starting WPF message loop...
+2026-08-04 11:06:11.847 +07:00 [INF] VisionSuite shell window created and shown
+2026-08-04 11:06:11.856 +07:00 [INF] Hardware context initialized: 0 camera(s) discovered
+2026-08-04 11:06:18.229 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[@__ToLower_0='?' (Size = 5)], CommandType='"Text"', CommandTimeout='30']
+SELECT "u"."Id", "u"."CreatedAt", "u"."DisplayName", "u"."IsLocked", "u"."LastLoginAt", "u"."PasswordHash", "u"."Role", "u"."Username"
+FROM "Users" AS "u"
+WHERE lower("u"."Username") = @__ToLower_0
+LIMIT 1
+2026-08-04 11:06:18.475 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (Size = 32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "u"."Id", "u"."CreatedAt", "u"."DisplayName", "u"."IsLocked", "u"."LastLoginAt", "u"."PasswordHash", "u"."Role", "u"."Username"
+FROM "Users" AS "u"
+WHERE "u"."Id" = @__userId_0
+LIMIT 1
+2026-08-04 11:06:18.604 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@p1='?' (Size = 32), @p0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Users" SET "LastLoginAt" = @p0
+WHERE "Id" = @p1
+RETURNING 1;
+2026-08-04 11:06:18.636 +07:00 [INF] User 'admin' authenticated (role="Administrator")
