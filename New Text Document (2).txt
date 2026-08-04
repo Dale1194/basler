@@ -1,25 +1,12 @@
 D:\Dale_Luong\basler_inspect>py main.py --capture-reference
 Đã kết nối: acA5472-5gm (serial=23883771)
-Đã áp cấu hình: Width=5472, Height=3648, OffsetX=0, OffsetY=0, ExposureTimeAbs=10036, GainRaw=1319, AcquisitionFrameRateAbs=5.0
-[warn] Buffer underrun, retry sau 100ms (The buffer was incompletely grabbed. This can be caused by p)
-Đã lưu reference: references\reference_20260804_143018_273.png
+Đã áp cấu hình: Width=2592, Height=1944, OffsetX=0, OffsetY=0, ExposureTimeAbs=10036, GainRaw=1319, AcquisitionFrameRateAbs=5.0
+Đã lưu reference: references\reference_20260804_143736_214.png
 Copy path này vào config.json -> inspection.reference_image.
 
 D:\Dale_Luong\basler_inspect>py main.py --once
 Đã kết nối: acA5472-5gm (serial=23883771)
-Đã áp cấu hình: Width=5472, Height=3648, OffsetX=0, OffsetY=0, ExposureTimeAbs=10036, GainRaw=1319, AcquisitionFrameRateAbs=5.0
-[warn] Buffer underrun, retry sau 100ms (The buffer was incompletely grabbed. This can be caused by p)
-Traceback (most recent call last):
-  File "D:\Dale_Luong\basler_inspect\main.py", line 171, in <module>
-    sys.exit(main())
-             ^^^^^^
-  File "D:\Dale_Luong\basler_inspect\main.py", line 157, in main
-    run_once(cam, inspector, output_dir, csv_log, save, annotate_flag, prefix)
-  File "D:\Dale_Luong\basler_inspect\main.py", line 102, in run_once
-    image = cam.grab_one()
-            ^^^^^^^^^^^^^^
-  File "D:\Dale_Luong\basler_inspect\camera.py", line 142, in grab_one
-    raise RuntimeError(f"Grab thất bại: {err}")
-RuntimeError: Grab thất bại: The buffer was incompletely grabbed. This can be caused by performance problems of the network hardware used, i.e., the network adapter, switch, or Ethernet cable. Buffer underruns can also cause image loss. To fix this, use the pylonGigEConfigurator tool to optimize your setup and use more buffers for grabbing in your application to prevent buffer underruns. Check the FrameRetention setting.
+Đã áp cấu hình: Width=2592, Height=1944, OffsetX=0, OffsetY=0, ExposureTimeAbs=10036, GainRaw=1319, AcquisitionFrameRateAbs=5.0
+[20260804_143807_490] PASS | TemplateMatch=0.999 | Brightness=61.761
 
 D:\Dale_Luong\basler_inspect>
