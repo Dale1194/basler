@@ -1,30 +1,91 @@
-2026-08-04 11:06:10.661 +07:00 [INF] VisionSuite starting up (BaseDirectory=C:\VisionSuite\)
-2026-08-04 11:06:10.704 +07:00 [INF] Building Generic Host...
-2026-08-04 11:06:10.760 +07:00 [INF] Host built successfully
-2026-08-04 11:06:11.248 +07:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+2026-08-04 11:42:52.314 +07:00 [INF] VisionSuite starting up (BaseDirectory=C:\VisionSuite\)
+2026-08-04 11:42:52.343 +07:00 [INF] Building Generic Host...
+2026-08-04 11:42:52.473 +07:00 [INF] Host built successfully
+2026-08-04 11:42:52.900 +07:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
 SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;
-2026-08-04 11:06:11.347 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+2026-08-04 11:42:52.988 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
 SELECT EXISTS (
     SELECT 1
     FROM "Users" AS "u")
-2026-08-04 11:06:11.374 +07:00 [INF] Creating WPF App...
-2026-08-04 11:06:11.438 +07:00 [INF] App created, InitializeComponent done
-2026-08-04 11:06:11.844 +07:00 [INF] VisionSuite shell window shown
-2026-08-04 11:06:11.844 +07:00 [INF] Starting WPF message loop...
-2026-08-04 11:06:11.847 +07:00 [INF] VisionSuite shell window created and shown
-2026-08-04 11:06:11.856 +07:00 [INF] Hardware context initialized: 0 camera(s) discovered
-2026-08-04 11:06:18.229 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[@__ToLower_0='?' (Size = 5)], CommandType='"Text"', CommandTimeout='30']
+2026-08-04 11:42:52.991 +07:00 [INF] Creating WPF App...
+2026-08-04 11:42:53.053 +07:00 [INF] App created, InitializeComponent done
+2026-08-04 11:42:53.388 +07:00 [INF] VisionSuite shell window shown
+2026-08-04 11:42:53.389 +07:00 [INF] Starting WPF message loop...
+2026-08-04 11:42:53.393 +07:00 [INF] VisionSuite shell window created and shown
+2026-08-04 11:42:53.395 +07:00 [INF] HardwareContext: Starting initialization with 3 camera provider(s)
+2026-08-04 11:42:53.992 +07:00 [WRN] Hardware initialization failed
+System.TypeInitializationException: The type initializer for '<Module>' threw an exception.
+ ---> System.Exception: Mismatch between the assembly file version (1.1.5.0) and the native library version (1.2.0.0). Please ensure both versions are synchronized.
+   at Basler.Pylon.Internals.LibraryIntegrityChecker.CheckLibraryIntegrity()
+   at .cctor()
+   --- End of inner exception stack trace ---
+   at VisionSuite.Infrastructure.Cameras.Basler.BaslerCameraProvider.ProbePylonAvailability()
+   at VisionSuite.Infrastructure.Cameras.Basler.BaslerCameraProvider.get_IsAvailable()
+   at VisionSuite.Infrastructure.Services.HardwareContext.InitializeAsync(CancellationToken ct)
+   at VisionSuite.Host.Program.<>c__DisplayClass0_0.<<Main>b__0>d.MoveNext()
+2026-08-04 11:43:03.881 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[@__ToLower_0='?' (Size = 5)], CommandType='"Text"', CommandTimeout='30']
 SELECT "u"."Id", "u"."CreatedAt", "u"."DisplayName", "u"."IsLocked", "u"."LastLoginAt", "u"."PasswordHash", "u"."Role", "u"."Username"
 FROM "Users" AS "u"
 WHERE lower("u"."Username") = @__ToLower_0
 LIMIT 1
-2026-08-04 11:06:18.475 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (Size = 32)], CommandType='"Text"', CommandTimeout='30']
+2026-08-04 11:43:04.128 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (Size = 32)], CommandType='"Text"', CommandTimeout='30']
 SELECT "u"."Id", "u"."CreatedAt", "u"."DisplayName", "u"."IsLocked", "u"."LastLoginAt", "u"."PasswordHash", "u"."Role", "u"."Username"
 FROM "Users" AS "u"
 WHERE "u"."Id" = @__userId_0
 LIMIT 1
-2026-08-04 11:06:18.604 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@p1='?' (Size = 32), @p0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+2026-08-04 11:43:04.195 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@p1='?' (Size = 32), @p0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
 UPDATE "Users" SET "LastLoginAt" = @p0
 WHERE "Id" = @p1
 RETURNING 1;
-2026-08-04 11:06:18.636 +07:00 [INF] User 'admin' authenticated (role="Administrator")
+2026-08-04 11:43:04.205 +07:00 [INF] User 'admin' authenticated (role="Administrator")
+2026-08-04 11:43:08.789 +07:00 [ERR] Unhandled UI thread exception
+System.TypeInitializationException: The type initializer for '<Module>' threw an exception.
+ ---> System.Exception: Mismatch between the assembly file version (1.1.5.0) and the native library version (1.2.0.0). Please ensure both versions are synchronized.
+   at Basler.Pylon.Internals.LibraryIntegrityChecker.CheckLibraryIntegrity()
+   at .cctor()
+   --- End of inner exception stack trace ---
+   at VisionSuite.Infrastructure.Cameras.Basler.BaslerCameraProvider.ProbePylonAvailability()
+   at VisionSuite.Infrastructure.Cameras.Basler.BaslerCameraProvider.get_IsAvailable()
+   at VisionSuite.Infrastructure.Services.HeartbeatService.BuildReport()
+   at VisionSuite.Infrastructure.Services.HeartbeatService.GetReport()
+   at VisionSuite.Application.UseCases.HardwareHealthUseCase.Execute() in D:\Projects\Mvpf.CameraControl\src\VisionSuite.Application\UseCases\HardwareHealthUseCase.cs:line 25
+   at VisionSuite.Desktop.ViewModels.SettingsViewModel.Refresh()
+   at CommunityToolkit.Mvvm.Input.RelayCommand.Execute(Object parameter)
+   at VisionSuite.Desktop.ViewModels.SettingsViewModel..ctor(HardwareHealthUseCase hardwareHealthUseCase)
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimeConstructorInfo.Invoke(BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitDisposeCache(ServiceCallSite transientCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass2_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(ServiceIdentifier serviceIdentifier, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at VisionSuite.Desktop.ViewModels.ShellViewModel.UpdatePanelViewModels(String viewName)
+   at VisionSuite.Desktop.ViewModels.ShellViewModel.set_CurrentView(String value)
+   at VisionSuite.Desktop.ViewModels.ShellViewModel.OnNavigationViewChanged(Object sender, String viewName)
+   at VisionSuite.Desktop.Services.NavigationService.NavigateTo(String viewName)
+   at VisionSuite.Desktop.ViewModels.ShellViewModel.NavigateTo(String view)
+   at CommunityToolkit.Mvvm.Input.RelayCommand`1.Execute(Object parameter)
+   at System.Windows.Controls.Button.OnClick()
+   at System.Windows.Controls.Primitives.ButtonBase.OnMouseLeftButtonUp(MouseButtonEventArgs e)
+   at System.Windows.RoutedEventArgs.InvokeHandler(Delegate handler, Object target)
+   at System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+   at System.Windows.UIElement.ReRaiseEventAs(DependencyObject sender, RoutedEventArgs args, RoutedEvent newEvent)
+   at System.Windows.RoutedEventArgs.InvokeHandler(Delegate handler, Object target)
+   at System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+   at System.Windows.UIElement.RaiseEventImpl(DependencyObject sender, RoutedEventArgs args)
+   at System.Windows.UIElement.RaiseTrustedEvent(RoutedEventArgs args)
+   at System.Windows.Input.InputManager.ProcessStagingArea()
+   at System.Windows.Interop.HwndMouseInputProvider.ReportInput(IntPtr hwnd, InputMode mode, Int32 timestamp, RawMouseActions actions, Int32 x, Int32 y, Int32 wheel)
+   at System.Windows.Interop.HwndMouseInputProvider.FilterMessage(IntPtr hwnd, WindowMessage msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at System.Windows.Interop.HwndSource.InputFilterMessage(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at MS.Win32.HwndWrapper.WndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   at System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+2026-08-04 11:43:14.468 +07:00 [INF] WPF message loop exited, disposing host...
