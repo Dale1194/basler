@@ -1,12 +1,17 @@
 D:\Dale_Luong\basler_inspect>py main.py --capture-reference
 Đã kết nối: acA5472-5gm (serial=23883771)
-Đã áp cấu hình: Width=2592, Height=1944, OffsetX=0, OffsetY=0, ExposureTimeAbs=10036, GainRaw=1319, AcquisitionFrameRateAbs=5.0
-Đã lưu reference: references\reference_20260804_143736_214.png
+Đã áp cấu hình: Width=3840, Height=2160, OffsetX=0, OffsetY=0, ExposureTimeAbs=10036, GainRaw=1319, AcquisitionFrameRateAbs=5.0
+Đã lưu reference: references\reference_20260804_144156_404.png
 Copy path này vào config.json -> inspection.reference_image.
 
 D:\Dale_Luong\basler_inspect>py main.py --once
 Đã kết nối: acA5472-5gm (serial=23883771)
-Đã áp cấu hình: Width=2592, Height=1944, OffsetX=0, OffsetY=0, ExposureTimeAbs=10036, GainRaw=1319, AcquisitionFrameRateAbs=5.0
-[20260804_143807_490] PASS | TemplateMatch=0.999 | Brightness=61.761
+Đã áp cấu hình: Width=3840, Height=2160, OffsetX=0, OffsetY=0, ExposureTimeAbs=10036, GainRaw=1319, AcquisitionFrameRateAbs=5.0
+[20260804_144222_301] FAIL | TemplateMatch=0.999 | Brightness=26.784
+
+D:\Dale_Luong\basler_inspect>py main.py --once
+Đã kết nối: acA5472-5gm (serial=23883771)
+Đã áp cấu hình: Width=3840, Height=2160, OffsetX=0, OffsetY=0, ExposureTimeAbs=10036, GainRaw=1319, AcquisitionFrameRateAbs=5.0
+[20260804_144300_129] FAIL | TemplateMatch=0.999 | Brightness=26.560
 
 D:\Dale_Luong\basler_inspect>
