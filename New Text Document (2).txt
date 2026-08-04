@@ -1,59 +1,19 @@
-Bước 1 — Cài packages Python (pylon SDK đã có sẵn, chỉ cần wrapper):
-cd D:\basler_inspect
-pip install -r requirements.txt
-Nếu pypylon version không khớp với pylon SDK đã cài, hãy chạy pip install pypylon để lấy bản mới nhất tương thích.
-Bước 2 — Chụp ảnh mẫu chuẩn (golden sample):
-python main.py --capture-reference --reference-out reference.png
-Đặt vật mẫu "đạt" vào vị trí kiểm tra trước khi chạy → lưu reference.png.
-Bước 3 — Sửa config.json cho khớp camera thực tế của bạn:
-- camera.serial_number: null = lấy camera đầu tiên, điền string nếu có nhiều camera
-- camera.exposure_time_us / gain_db: chỉnh đến khi ảnh đẹp trong Pylon Viewer
-- camera.width/height: khớp với ROI bạn đã set
-- inspection.roi: [x, y, w, h] — vùng kiểm tra brightness
-- inspection.template_match_threshold: 0.9 = score match ≥ 0.9 → PASS
-Bước 4 — Chạy inspection:
-python main.py --once                    # Chụp 1 lần, lưu + log
-python main.py --interval 0.5            # Chụp liên tục mỗi 0.5s
-python main.py --once --no-save          # Chỉ in kết quả, không lưu ảnh
-Output
-- ./captures/img_<timestamp>_PASS|FAIL.png — ảnh đã annotate (chữ PASS/FAIL màu xanh/đỏ + chi tiết từng check)
-- ./results.csv — log mỗi lần chụp: timestamp, overall, score từng inspector, detail
-
-D:\Dale_Luong\basler_inspect>py main.py --capture-reference --reference-out reference.png
+D:\Dale_Luong\basler_inspect>py main.py --once
 Traceback (most recent call last):
-  File "D:\Dale_Luong\basler_inspect\main.py", line 163, in <module>
+  File "D:\Dale_Luong\basler_inspect\main.py", line 171, in <module>
     sys.exit(main())
              ^^^^^^
-  File "D:\Dale_Luong\basler_inspect\main.py", line 130, in main
+  File "D:\Dale_Luong\basler_inspect\main.py", line 152, in main
     with BaslerCamera(serial_number=serial) as cam:
          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Dale_Luong\basler_inspect\camera.py", line 31, in __enter__
+  File "D:\Dale_Luong\basler_inspect\camera.py", line 32, in __enter__
     self.connect()
-  File "D:\Dale_Luong\basler_inspect\camera.py", line 48, in connect
-    raise RuntimeError(f"Không tìm thấy camera với serial '{self._serial}'.")
-RuntimeError: Không tìm thấy camera với serial '23883771'.
-
-D:\Dale_Luong\basler_inspect>
-D:\Dale_Luong\basler_inspect>py main.py --capture-reference --reference-out reference.png
-Đã kết nối: acA5472-5gm (serial=23883771)
-Đã áp cấu hình: Width=5472, Height=3648, OffsetX=0, OffsetY=0, ExposureTimeAbs=10036, GainRaw=1319, AcquisitionFrameRateAbs=28.99997
-Đã lưu reference: reference.png
-Copy path này vào config.json -> inspection.reference_image.
-
-D:\Dale_Luong\basler_inspect>py main.py --once
-Đã kết nối: acA5472-5gm (serial=23883771)
-Đã áp cấu hình: Width=5472, Height=3648, OffsetX=0, OffsetY=0, ExposureTimeAbs=10036, GainRaw=1319, AcquisitionFrameRateAbs=28.99997
-Traceback (most recent call last):
-  File "D:\Dale_Luong\basler_inspect\main.py", line 163, in <module>
-    sys.exit(main())
-             ^^^^^^
-  File "D:\Dale_Luong\basler_inspect\main.py", line 149, in main
-    run_once(cam, inspector, output_dir, csv_log, save, annotate_flag, prefix)
-  File "D:\Dale_Luong\basler_inspect\main.py", line 99, in run_once
-    image = cam.grab_one()
-            ^^^^^^^^^^^^^^
-  File "D:\Dale_Luong\basler_inspect\camera.py", line 115, in grab_one
-    raise RuntimeError(f"Grab thất bại: {grab.ErrorDescription}")
-RuntimeError: Grab thất bại: The buffer was incompletely grabbed. This can be caused by performance problems of the network hardware used, i.e., the network adapter, switch, or Ethernet cable. Buffer underruns can also cause image loss. To fix this, use the pylonGigEConfigurator tool to optimize your setup and use more buffers for grabbing in your application to prevent buffer underruns. Check the FrameRetention setting.
+  File "D:\Dale_Luong\basler_inspect\camera.py", line 65, in connect
+    self._camera.Open()
+  File "C:\Users\TEST\AppData\Local\Programs\Python\Python312\Lib\site-packages\pypylon\pylon.py", line 4536, in Open
+    return _pylon.InstantCamera_Open(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_genicam.RuntimeException: Failed to open 'Basler acA5472-5gm#0030533B42FB#192.168.3.3:3956'. The device is controlled by another application. Err: An attempt was made to access an address location which is currently/momentary not accessible. (0xE1018006)
+ : RuntimeException thrown (file 'GigEDevice.cpp', line 312)
 
 D:\Dale_Luong\basler_inspect>
