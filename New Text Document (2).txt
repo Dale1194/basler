@@ -1,6 +1,13 @@
+D:\Dale_Luong\basler_inspect>py main.py --capture-reference
+Đã kết nối: acA5472-5gm (serial=23883771)
+Đã áp cấu hình: Width=5472, Height=3648, OffsetX=0, OffsetY=0, ExposureTimeAbs=10036, GainRaw=1319, AcquisitionFrameRateAbs=5.0
+[warn] Buffer underrun, retry sau 100ms (The buffer was incompletely grabbed. This can be caused by p)
+Đã lưu reference: references\reference_20260804_143018_273.png
+Copy path này vào config.json -> inspection.reference_image.
+
 D:\Dale_Luong\basler_inspect>py main.py --once
 Đã kết nối: acA5472-5gm (serial=23883771)
-Đã áp cấu hình: Width=5472, Height=3648, OffsetX=0, OffsetY=0, ExposureTimeAbs=10036, GainRaw=1319, AcquisitionFrameRateAbs=28.99997
+Đã áp cấu hình: Width=5472, Height=3648, OffsetX=0, OffsetY=0, ExposureTimeAbs=10036, GainRaw=1319, AcquisitionFrameRateAbs=5.0
 [warn] Buffer underrun, retry sau 100ms (The buffer was incompletely grabbed. This can be caused by p)
 Traceback (most recent call last):
   File "D:\Dale_Luong\basler_inspect\main.py", line 171, in <module>
