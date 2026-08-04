@@ -18,3 +18,19 @@ python main.py --once --no-save          # Chỉ in kết quả, không lưu ả
 Output
 - ./captures/img_<timestamp>_PASS|FAIL.png — ảnh đã annotate (chữ PASS/FAIL màu xanh/đỏ + chi tiết từng check)
 - ./results.csv — log mỗi lần chụp: timestamp, overall, score từng inspector, detail
+
+D:\Dale_Luong\basler_inspect>py main.py --capture-reference --reference-out reference.png
+Traceback (most recent call last):
+  File "D:\Dale_Luong\basler_inspect\main.py", line 163, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "D:\Dale_Luong\basler_inspect\main.py", line 130, in main
+    with BaslerCamera(serial_number=serial) as cam:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Dale_Luong\basler_inspect\camera.py", line 31, in __enter__
+    self.connect()
+  File "D:\Dale_Luong\basler_inspect\camera.py", line 48, in connect
+    raise RuntimeError(f"Không tìm thấy camera với serial '{self._serial}'.")
+RuntimeError: Không tìm thấy camera với serial '23883771'.
+
+D:\Dale_Luong\basler_inspect>
