@@ -1,8 +1,7 @@
-Kính chào Quý anh/chị.
-Em tên là Bùi Anh Vương, năm nay 21 tuổi. Em vừa tốt nghiệp ngành Kỹ thuật Điều khiển và Tự động hóa tại Trường Đại học Hải Phòng và đang chờ nhận bằng . Hôm nay em rất vinh dự được ứng tuyển vị trí PE Engineer tại công ty mình.
-Về học vấn, trong 4 năm qua em được trang bị nền tảng về điều khiển tự động hóa: lập trình PLC, thiết kế mạch điện bằng AutoCAD, đồng thời thực hành thiết kế.
-Về đồ án tốt nghiệp, em làm đội trưởng dự án "Thiết kế và chế tạo máy trộn sơn tự động theo tỉ lệ cài đặt sẵn" và đã bảo vệ thành công trước hội đồng.
-Về kinh nghiệm làm việc, em có 6 tháng làm kỹ thuật viên tại Công ty Cổ phần Điện tử FOUR P (10/2025 – 04/2026). Công việc chính gồm: giám sát tình trạng thiết bị trên dây chuyền sản xuất, xử lý sự cố phát sinh, phối hợp với phòng sản xuất để đảm bảo chất lượng, và thực hiện đánh giá GRR cùng tổng hợp dữ liệu Cpk trước khi khi chạy sản xuất. Đây là nền tảng thực tế rất quý giá để em theo vị trí PE Engineer.
-Về điểm mạnh, em đọc hiểu tài liệu kỹ thuật tiếng Anh tốt, có thể viết báo cáo và giao tiếp trong môi trường làm việc. Em là người có trách nhiệm, ham học hỏi, và thích nghi nhanh với công nghệ cùng môi trường mới — điều này rất phù hợp với nhịp sản xuất của dây chuyền.
-Về mục tiêu, em mong được gắn bó lâu dài với công ty, học hỏi từ đội ngũ kỹ sư giàu kinh nghiệm, đặc biệt là các anh/chị từ Đài Loan, để dần trở thành một PE Engineer trưởng thành và đóng góp ổn định cho sự phát triển của công ty.
-Em xin cảm ơn Quý anh/chị đã lắng nghe. Em rất mong có cơ hội được trao đổi thêm về vị trí này.
+Em tên là Bùi Anh Vương, 23tuổi. Em vừa tốt nghiệp ngành Kỹ thuật Điều khiển và Tự động hóa tại Đại học Hải Phòng và đang chờ nhận bằng. Em rất vinh dự được ứng tuyển vị trí PE Engineer tại công ty mình.
+Em có nền tảng về PLC, AutoCAD và hệ thống điều khiển tự động hóa.
+Về đồ án tốt nghiệp, em là đội trưởng dự án "Thiết kế máy trộn sơn tự động" và đã bảo vệ thành công. Em lập trình PLC Mitsubishi FX3U điều khiển động cơ, bơm, cảm biến, và xây dựng giao diện giám sát.
+Về kinh nghiệm, em có 6 tháng kỹ thuật viên tại FOUR P Electronics (10/2025 – 04/2026): giám sát thiết bị dây chuyền, xử lý sự cố, đánh giá GRR và Cpk trước khi sản xuất.
+Em là người có trách nhiệm, ham học hỏi, thích nghi nhanh — phù hợp với nhịp vận hành dây chuyền.
+Em mong được gắn bó lâu dài với công ty, học hỏi từ anh/chị Đài Loan, để dần trở thành một PE Engineer trưởng thành và đóng góp ổn định cho công ty.
+Em xin cảm ơn Quý anh/chị. Em rất mong có cơ hội trao đổi thêm về vị trí này.
